@@ -4,12 +4,11 @@ import { UserProfileComponent } from "../../components/user-profile/user-profile
 import { HeaderComponent } from "../../components/header/header.component";
 import { ProductFilterComponent } from "../../components/product-filter/product-filter.component";
 import { ProductCardComponent } from "../../components/product-card/product-card.component";
-import { CartItemComponent } from "../../components/cart-item/cart-item.component";
 import { CartComponent } from "../../components/cart/cart.component";
 
 @Component({
   selector: 'app-home',
-  imports: [SidebarComponent, UserProfileComponent, HeaderComponent, ProductFilterComponent, ProductCardComponent, CartItemComponent, CartComponent],
+  imports: [SidebarComponent, UserProfileComponent, HeaderComponent, ProductFilterComponent, ProductCardComponent, CartComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
