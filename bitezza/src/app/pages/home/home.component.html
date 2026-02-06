@@ -1,38 +1,51 @@
 <div class="flex h-screen overflow-hidden">
-  <!-- Sidebar -->
-  <div class="border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 z-10">
-    <aside class="w-64 flex flex-col">
-      <app-sidebar></app-sidebar>
-      <app-user-profile></app-user-profile>
-    </aside>
+
+  <!-- Sidebar (unchanged) -->
+  <aside
+    class="w-64 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900"
+  >
+    <app-sidebar></app-sidebar>
+    <app-user-profile></app-user-profile>
+  </aside>
+
+  <!-- Main + Cart wrapper -->
+  <div class="flex-1 flex overflow-hidden">
+
+    <!-- Main area -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+
+      <!-- NEW ORDER -->
+      <ng-container *ngIf="(currentView$ | async) === 'newOrder'">
+
+        <!-- load your new order page -->
+        <app-new-order></app-new-order>
+
+      </ng-container>
+
+      <!-- LIVE TRACKING -->
+      <ng-container *ngIf="(currentView$ | async) === 'liveTracking'">
+        <div class="p-8">
+          Live tracking
+        </div>
+      </ng-container>
+
+      <!-- ORDER HISTORY -->
+      <ng-container *ngIf="(currentView$ | async) === 'orderHistory'">
+        <div class="p-8">
+          Order history
+        </div>
+      </ng-container>
+
+      <!-- MENU MANAGEMENT -->
+      <ng-container *ngIf="(currentView$ | async) === 'menuManagement'">
+        <div class="p-8">
+          Menu management
+        </div>
+      </ng-container>
+
+    </main>
+
+
   </div>
 
-  <!-- Main -->
-  <main class="flex-1 flex flex-col">
-    <app-header></app-header>
-
-    <div class="flex-1 overflow-y-auto p-8">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h1 class="text-3xl font-bold">Delicious Burgers</h1>
-          <p class="text-gray-500 mt-1 font-medium">
-            Discover our chef's hand-crafted selection
-          </p>
-        </div>
-
-        <app-product-filter></app-product-filter>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-        <app-product-card></app-product-card>
-      </div>
-    </div>
-  </main>
-
-  <!-- Cart -->
-  <aside class="w-96 flex flex-col">
-    <app-cart></app-cart>
-  </aside>
 </div>

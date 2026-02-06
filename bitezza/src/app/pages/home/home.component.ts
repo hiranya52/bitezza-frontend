@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from "../../components/sidebar/sidebar.component";
+import { AsyncPipe, NgIf } from '@angular/common';
+import { NewOrderComponent } from "../../components/new-order/new-order.component";
+import { ViewService } from '../../view/view.service';
+import { Observable } from 'rxjs';
 import { UserProfileComponent } from "../../components/user-profile/user-profile.component";
-import { HeaderComponent } from "../../components/header/header.component";
-import { ProductFilterComponent } from "../../components/product-filter/product-filter.component";
-import { ProductCardComponent } from "../../components/product-card/product-card.component";
-import { CartComponent } from "../../components/cart/cart.component";
 
 @Component({
   selector: 'app-home',
-  imports: [SidebarComponent, UserProfileComponent, HeaderComponent, ProductFilterComponent, ProductCardComponent, CartComponent],
+  imports: [SidebarComponent, NgIf, AsyncPipe, NewOrderComponent, UserProfileComponent],
   templateUrl: './home.component.html',
+  standalone: true,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  currentView$!: Observable<string>;
+
+  constructor(private viewService: ViewService) {
+    this.currentView$ = this.viewService.currentView$;
+  }
 
 }

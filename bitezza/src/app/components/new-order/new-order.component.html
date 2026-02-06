@@ -1,0 +1,49 @@
+<div class="flex h-screen overflow-hidden">
+
+  <!-- Right side (main + cart) -->
+  <div class="flex flex-1 overflow-hidden">
+
+    <!-- Main -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+
+      <app-header></app-header>
+
+      <!-- SCROLL CONTAINER -->
+      <div class="flex-1 overflow-y-auto p-8">
+
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h1 class="text-3xl font-bold">Delicious Burgers</h1>
+            <p class="text-gray-500 mt-1 font-medium">
+              Discover our chef's hand-crafted selection
+            </p>
+          </div>
+
+          <app-product-filter></app-product-filter>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
+        >
+          <app-product-card></app-product-card>
+          <app-product-card></app-product-card>
+          <app-product-card></app-product-card>
+          <app-product-card></app-product-card>
+          <app-product-card></app-product-card>
+          <app-product-card></app-product-card>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Cart -->
+    <aside
+      class="w-96 flex flex-col border-l border-gray-200 dark:border-gray-800 overflow-hidden"
+    >
+      <app-cart></app-cart>
+    </aside>
+
+  </div>
+
+</div>
