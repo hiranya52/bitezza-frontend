@@ -1,18 +1,17 @@
 <div class="flex h-screen overflow-hidden">
-
   <!-- Sidebar -->
-  <aside class="w-64 flex flex-col">
-    <app-sidebar></app-sidebar>
-    <app-user-profile></app-user-profile>
-  </aside>
+  <div class="border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 z-10">
+    <aside class="w-64 flex flex-col">
+      <app-sidebar></app-sidebar>
+      <app-user-profile></app-user-profile>
+    </aside>
+  </div>
 
   <!-- Main -->
   <main class="flex-1 flex flex-col">
-
     <app-header></app-header>
 
     <div class="flex-1 overflow-y-auto p-8">
-
       <div class="flex items-center justify-between mb-8">
         <div>
           <h1 class="text-3xl font-bold">Delicious Burgers</h1>
@@ -29,7 +28,6 @@
         <app-product-card></app-product-card>
         <app-product-card></app-product-card>
       </div>
-
     </div>
   </main>
 
@@ -37,5 +35,4 @@
   <aside class="w-96 flex flex-col">
     <app-cart></app-cart>
   </aside>
-
 </div>
