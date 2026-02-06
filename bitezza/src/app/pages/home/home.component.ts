@@ -5,10 +5,11 @@ import { NewOrderComponent } from "../../components/new-order/new-order.componen
 import { ViewService } from '../../view/view.service';
 import { Observable } from 'rxjs';
 import { UserProfileComponent } from "../../components/user-profile/user-profile.component";
+import { LiveTrackingComponent } from "../../components/live-tracking/live-tracking.component";
 
 @Component({
   selector: 'app-home',
-  imports: [SidebarComponent, NgIf, AsyncPipe, NewOrderComponent, UserProfileComponent],
+  imports: [SidebarComponent, NgIf, AsyncPipe, NewOrderComponent, UserProfileComponent, LiveTrackingComponent],
   templateUrl: './home.component.html',
   standalone: true,
   styleUrl: './home.component.css'
