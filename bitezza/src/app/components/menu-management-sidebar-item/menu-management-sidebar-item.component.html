@@ -1,0 +1,11 @@
+<a [href]="href"
+   class="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
+   [ngClass]="{
+     'bg-primary/10 text-primary': active,
+     'text-[#8a7260] dark:text-[#c4a692] hover:bg-background-light dark:hover:bg-[#3d2b1f]': !active
+   }">
+  <span class="material-symbols-outlined" [ngStyle]="active ? {'font-variation-settings': `'FILL' 1`} : {}">
+    {{ icon }}
+  </span>
+  <span class="font-medium">{{ label }}</span>
+</a>
