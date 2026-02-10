@@ -1,0 +1,30 @@
+<!-- Overlay -->
+<div class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex justify-end">
+
+  <!-- Panel -->
+  <div class="w-[450px] bg-white dark:bg-[#2a1d14] h-full shadow-2xl flex flex-col">
+
+    <!-- Header -->
+    <div
+      class="p-6 border-b border-[#e6dfdb] dark:border-[#3d2b1f] flex items-center justify-between"
+    >
+      <h3 class="text-xl font-bold">Add New Product</h3>
+      <button
+        (click)="close()"
+        class="p-2 hover:bg-background-light rounded-full transition-colors"
+      >
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="flex-1 overflow-auto p-8 space-y-6">
+      <app-image-upload></app-image-upload>
+      <app-product-form></app-product-form>
+    </div>
+
+    <!-- Footer -->
+    <app-panel-footer></app-panel-footer>
+
+  </div>
+</div>
