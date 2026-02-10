@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-management-sidebar-item',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './menu-management-sidebar-item.component.css'
 })
 export class MenuManagementSidebarItemComponent {
+
+  @Input() icon: string = '';
+  @Input() label: string = '';
+  @Input() active: boolean = false;
+  @Input() href: string = '#';
 
 }
