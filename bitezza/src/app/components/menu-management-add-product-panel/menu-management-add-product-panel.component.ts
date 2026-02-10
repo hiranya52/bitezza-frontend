@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class MenuManagementAddProductPanelComponent {
 
+  close() {
+    // later you can emit an event here
+    console.log('close panel');
+  }
+
 }
