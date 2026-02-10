@@ -4,10 +4,11 @@ import { OrderHistoryHeaderComponent } from "../order-history-header/order-histo
 import { OrderHistoryPageStatsComponent } from "../order-history-page-stats/order-history-page-stats.component";
 import { OrderHistoryFilterBarComponent } from "../order-history-filter-bar/order-history-filter-bar.component";
 import { OrderHistoryOrdersTableComponent } from "../order-history-orders-table/order-history-orders-table.component";
+import { OrderHistoryPaginationComponent } from "../order-history-pagination/order-history-pagination.component";
 
 @Component({
   selector: 'app-order-history',
-  imports: [OrderColumnHeaderComponent, OrderHistoryHeaderComponent, OrderHistoryPageStatsComponent, OrderHistoryFilterBarComponent, OrderHistoryOrdersTableComponent],
+  imports: [OrderHistoryHeaderComponent, OrderHistoryPageStatsComponent, OrderHistoryFilterBarComponent, OrderHistoryOrdersTableComponent, OrderHistoryPaginationComponent],
   templateUrl: './order-history.component.html',
   styleUrl: './order-history.component.css'
 })
