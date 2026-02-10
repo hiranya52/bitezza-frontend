@@ -7,10 +7,11 @@ import { Observable } from 'rxjs';
 import { UserProfileComponent } from "../../components/user-profile/user-profile.component";
 import { LiveTrackingComponent } from "../../components/live-tracking/live-tracking.component";
 import { OrderHistoryComponent } from '../../components/order-history/order-history.component';
+import { MenuManagementComponent } from "../../components/menu-management/menu-management.component";
 
 @Component({
   selector: 'app-home',
-  imports: [SidebarComponent, NgIf, AsyncPipe, NewOrderComponent, UserProfileComponent, LiveTrackingComponent, OrderHistoryComponent],
+  imports: [SidebarComponent, NgIf, AsyncPipe, NewOrderComponent, UserProfileComponent, LiveTrackingComponent, OrderHistoryComponent, MenuManagementComponent],
   templateUrl: './home.component.html',
   standalone: true,
   styleUrl: './home.component.css'
