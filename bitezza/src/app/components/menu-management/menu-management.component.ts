@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuManagementSidebarItemComponent } from "../menu-management-sidebar-item/menu-management-sidebar-item.component";
 
 interface SidebarLink {
   icon: string;
@@ -11,7 +10,7 @@ interface SidebarLink {
 @Component({
   selector: 'app-menu-management',
   standalone: true,
-  imports: [MenuManagementSidebarItemComponent],
+  imports: [],
   templateUrl: './menu-management.component.html',
   styleUrl: './menu-management.component.css'
 })
