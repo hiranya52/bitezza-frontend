@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu-management-sidebar-item',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './menu-management-sidebar-item.component.html',
   styleUrl: './menu-management-sidebar-item.component.css'
 })

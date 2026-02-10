@@ -1,1 +1,32 @@
-<p>menu-management works!</p>
+<aside class="w-64 border-r border-[#e6dfdb] dark:border-[#3d2b1f] bg-white dark:bg-[#2a1d14] flex flex-col fixed h-full">
+
+  <!-- Logo / Brand -->
+  <div class="p-6 flex items-center gap-3">
+    <div class="size-10 rounded-full bg-primary flex items-center justify-center text-white">
+      <span class="material-symbols-outlined">lunch_dining</span>
+    </div>
+    <div>
+      <h1 class="text-lg font-bold leading-tight">Bitezza</h1>
+      <p class="text-xs text-[#8a7260] dark:text-[#c4a692]">Admin Terminal</p>
+    </div>
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="flex-1 px-4 space-y-1">
+    <app-menu-management-sidebar-item
+    *ngFor="let link of links"
+                      [icon]="link.icon"
+                      [label]="link.label"
+                      [href]="link.href"
+                      [active]="link.active"
+                      ></app-menu-management-sidebar-item>
+  </nav>
+
+  <!-- Settings -->
+  <div class="p-4 border-t border-[#e6dfdb] dark:border-[#3d2b1f]">
+    <app-menu-management-sidebar-item [icon]="settingsLink.icon"
+                      [label]="settingsLink.label"
+                      [href]="settingsLink.href"></app-menu-management-sidebar-item>
+  </div>
+
+</aside>
