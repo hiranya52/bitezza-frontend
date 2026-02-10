@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { ViewService } from './view.service';
 
 describe('ViewService', () => {
