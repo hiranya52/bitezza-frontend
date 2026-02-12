@@ -11,7 +11,17 @@ import { CartComponent } from "../cart/cart.component";
   templateUrl: './new-order.component.html',
   styleUrl: './new-order.component.css'
 })
-export class NewOrderComponent{
+export class NewOrderComponent implements OnInit{
 
+  private ProductsService = inject(ProductService);
+
+  ngOnInit(): void {
+    console.log("Products page loads!!");
+
+    this.ProductsService.getAllProducts().subscribe((response:any) => { // Catch the value return from the getProduct method // responde variable name
+      console.log(response.products);
+
+    });
+  }
 
 }
