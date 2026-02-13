@@ -15,13 +15,16 @@ export class NewOrderComponent implements OnInit{
 
   private ProductsService = inject(ProductService);
 
+   ProductList: any[] = [];
+
   ngOnInit(): void {
     console.log("Products page loads!!");
 
-    this.ProductsService.getAllProducts().subscribe((response:any) => { // Catch the value return from the getProduct method // responde variable name
-      console.log(response.products);
+    this.ProductsService.getAllProducts().subscribe((response:any) => {
+      console.log(response);
+      this.ProductList = response;
 
     });
-  }
 
+  }
 }
