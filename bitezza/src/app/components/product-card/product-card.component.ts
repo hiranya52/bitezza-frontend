@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-product-card',
@@ -9,5 +11,13 @@ import { Component, Input } from '@angular/core';
 export class ProductCardComponent {
 
   @Input() product: any
+
+  addToCart( productName: String ){
+
+    
+
+  }
+
+
 
 }
