@@ -13,8 +13,8 @@ export class ProductService {
     return this.http.get(API_ENDPOINTS.product.getAll);
   }
 
-  getProduct(){
-    return this.http.get(API_ENDPOINTS.product.getProduct);
+  getProduct(productName: string){
+    return this.http.get(API_ENDPOINTS.product.getProduct + encodeURIComponent(productName));
   }
 
 }

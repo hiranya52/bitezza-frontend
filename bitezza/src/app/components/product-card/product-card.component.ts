@@ -1,5 +1,6 @@
+import { ProductService } from './../../service/products/product.service';
 import { HttpClient } from '@angular/common/http';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 
 @Component({
@@ -10,11 +11,17 @@ import { environment } from '../../../environments/environment.prod';
 })
 export class ProductCardComponent {
 
+  private ProductService = inject(ProductService);
+
   @Input() product: any
 
-  addToCart( productName: String ){
+  addToCart( productName: string ){
 
-    
+    this.ProductService.getProduct(productName).subscribe((response:any) => {
+
+      console.log(response);
+
+    })
 
   }
 
