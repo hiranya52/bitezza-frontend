@@ -1,7 +1,7 @@
+import { CartService } from './../../service/carts/cart.service';
+import { cartProduct } from './../../../model/cartProduct.model';
 import { ProductService } from './../../service/products/product.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, Input } from '@angular/core';
-import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'app-product-card',
@@ -12,6 +12,7 @@ import { environment } from '../../../environments/environment.prod';
 export class ProductCardComponent {
 
   private ProductService = inject(ProductService);
+  private CartService = inject(CartService);
 
   @Input() product: any
 
@@ -19,7 +20,17 @@ export class ProductCardComponent {
 
     this.ProductService.getProduct(productName).subscribe((response:any) => {
 
-      console.log(response);
+      const product: cartProduct = {
+
+        name: response.name,
+        imageURL: response.imageUrl,
+        price: response.price,
+        qty: 1
+
+      }
+
+      this.CartService.addToCart(product);
+
 
     })
 
