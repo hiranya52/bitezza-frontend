@@ -8,6 +8,11 @@ import { Component, Input } from '@angular/core';
 })
 export class CartItemComponent {
 
-  @Input() product: any 
+  @Input() product: any
+
+  increaseQty(){
+    this.product.qty++;
+  }
+
 
 }
