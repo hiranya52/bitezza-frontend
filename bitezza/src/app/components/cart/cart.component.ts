@@ -25,5 +25,19 @@ export class CartComponent implements OnInit{
     this.cartProductList .length = 0;
   }
 
+  getSubTotal(){
+
+    let total=0;
+
+    for(let i = 0; i < this.cartProductList.length; i++){
+
+      total += this.cartProductList[i].price*this.cartProductList[i].qty;
+
+    }
+
+    return total;
+
+  }
+
 
 }
