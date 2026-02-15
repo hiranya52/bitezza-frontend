@@ -12,8 +12,11 @@
     <!-- Cart Item 1 -->
 
 
+    @for (item of cartProductList; track $index) {
+
       <app-cart-item></app-cart-item>
 
+    }
 
     <!-- Empty State Space (Fill) -->
     <div class="pt-8 text-center opacity-30">
