@@ -14,5 +14,8 @@ export class CartItemComponent {
     this.product.qty++;
   }
 
+  decreaseQty(){
+    this.product.qty--;
+  }
 
 }
