@@ -21,4 +21,9 @@ export class CartComponent implements OnInit{
 
   }
 
+  clearAll(){
+    this.cartProductList .length = 0;
+  }
+
+
 }
