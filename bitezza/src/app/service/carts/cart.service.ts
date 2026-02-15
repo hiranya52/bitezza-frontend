@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { cartProduct } from '../../../model/cartProduct.model';
+import { cartProduct } from '../../../model/CartProduct.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,24 @@ export class CartService {
 
 
   addToCart( product: cartProduct ) {
-    this.cartIems.push(product);
-    console.log(product);
+
+   let existingItem: cartProduct | undefined = undefined;
+
+  for (let i = 0; i < this.cartIems.length; i++) {
+    if (this.cartIems[i].name === product.name) {
+      existingItem = this.cartIems[i];
+      break;
+    }
+  }
+
+  if (existingItem) {
+    existingItem.qty++;
+  } else {
+    this.cartIems.push({
+      ...product,
+      qty: 1
+    });
+  }
 
   }
 
