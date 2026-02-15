@@ -15,9 +15,10 @@ export class CartComponent implements OnInit{
 
   private cart = inject(CartService);
 
-
   ngOnInit(): void {
     this.cartProductList = this.cart.getCartItems();
+    console.log(this.cartProductList);
+
   }
 
 }

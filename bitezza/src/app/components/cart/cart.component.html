@@ -13,9 +13,7 @@
 
 
     @for (item of cartProductList; track $index) {
-
-      <app-cart-item></app-cart-item>
-
+      <app-cart-item  [product]="item"></app-cart-item>
     }
 
     <!-- Empty State Space (Fill) -->
