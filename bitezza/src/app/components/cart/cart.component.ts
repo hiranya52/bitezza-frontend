@@ -39,5 +39,13 @@ export class CartComponent implements OnInit{
 
   }
 
+  getServiceFee(){
+
+    let total = this.getSubTotal();
+
+    return total/100*5;
+
+  }
+
 
 }
