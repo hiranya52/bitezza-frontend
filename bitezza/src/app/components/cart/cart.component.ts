@@ -47,5 +47,11 @@ export class CartComponent implements OnInit{
 
   }
 
+  getTotalPayable(){
+
+    return this.getSubTotal()+this.getServiceFee();
+
+  }
+
 
 }
