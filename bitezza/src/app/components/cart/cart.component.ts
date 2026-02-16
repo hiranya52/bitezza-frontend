@@ -18,7 +18,6 @@ export class CartComponent implements OnInit{
   ngOnInit(): void {
     this.cartProductList = this.cart.getCartItems();
     console.log(this.cartProductList);
-
   }
 
   clearAll(){
@@ -26,31 +25,25 @@ export class CartComponent implements OnInit{
   }
 
   getSubTotal(){
-
     let total=0;
 
     for(let i = 0; i < this.cartProductList.length; i++){
-
       total += this.cartProductList[i].price*this.cartProductList[i].qty;
-
     }
-
     return total;
-
   }
 
   getServiceFee(){
-
     let total = this.getSubTotal();
-
     return total/100*5;
-
   }
 
   getTotalPayable(){
-
     return this.getSubTotal()+this.getServiceFee();
+  }
 
+  addOrder(){
+    
   }
 
 
