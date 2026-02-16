@@ -2,10 +2,11 @@ import { CartService } from './../../service/carts/cart.service';
 import { cartProduct } from './../../../model/CartProduct.model';
 import { Component, inject, OnInit } from '@angular/core';
 import { CartItemComponent } from "../cart-item/cart-item.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
-  imports: [CartItemComponent],
+  imports: [CommonModule, CartItemComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
@@ -14,6 +15,13 @@ export class CartComponent implements OnInit{
   cartProductList: cartProduct[] = [];
 
   private cart = inject(CartService);
+
+  activeServiceType: string = 'Dine In'; // default
+
+setServiceType(type: string) {
+  this.activeServiceType = type;
+  console.log('Active service type:', this.activeServiceType);
+}
 
   ngOnInit(): void {
     this.cartProductList = this.cart.getCartItems();
@@ -43,7 +51,7 @@ export class CartComponent implements OnInit{
   }
 
   addOrder(){
-    
+
   }
 
 
