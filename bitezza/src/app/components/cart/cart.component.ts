@@ -16,12 +16,13 @@ export class CartComponent implements OnInit{
 
   private cart = inject(CartService);
 
-  activeServiceType: string = 'Dine In'; // default
+  activeServiceType: string = 'Dine In';
 
-setServiceType(type: string) {
-  this.activeServiceType = type;
-  console.log('Active service type:', this.activeServiceType);
-}
+  setServiceType(type: string) {
+    this.activeServiceType = type;
+    console.log(type);
+
+  }
 
   ngOnInit(): void {
     this.cartProductList = this.cart.getCartItems();
