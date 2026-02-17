@@ -26,12 +26,12 @@
     >
       <button
         (click)="setServiceType('Dine In')"
-        [ngClass]="
-          activeServiceType === 'Dine In'
-            ? 'service-type-active text-black'
-            : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200'
-        "
-        class="flex-1 service-type-active py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all"
+        [ngClass]="{
+          'text-black': activeServiceType === 'Dine In',
+          'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200':
+            activeServiceType !== 'Dine In',
+        }"
+        class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all"
       >
         <span class="material-symbols-outlined text-xl">restaurant</span>
         <span class="text-[10px] font-bold uppercase mt-0.5 tracking-wider"
@@ -41,12 +41,12 @@
 
       <button
         (click)="setServiceType('Takeaway')"
-        [ngClass]="
-          activeServiceType === 'Takeaway'
-            ? 'service-type-active text-black'
-            : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200'
-        "
-        class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        [ngClass]="{
+          'text-black': activeServiceType === 'Takeaway',
+          'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200':
+            activeServiceType !== 'Takeaway',
+        }"
+        class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all"
       >
         <span class="material-symbols-outlined text-xl">takeout_dining</span>
         <span class="text-[10px] font-bold uppercase mt-0.5 tracking-wider"
@@ -56,12 +56,12 @@
 
       <button
         (click)="setServiceType('Delivery')"
-        [ngClass]="
-          activeServiceType === 'Delivery'
-            ? 'service-type-active text-black'
-            : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200'
-        "
-        class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        [ngClass]="{
+          'text-black': activeServiceType === 'Delivery',
+          'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200':
+            activeServiceType !== 'Delivery',
+        }"
+        class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all"
       >
         <span class="material-symbols-outlined text-xl">delivery_dining</span>
         <span class="text-[10px] font-bold uppercase mt-0.5 tracking-wider"
@@ -139,5 +139,3 @@
     </div>
   </div>
 </div>
-
-
