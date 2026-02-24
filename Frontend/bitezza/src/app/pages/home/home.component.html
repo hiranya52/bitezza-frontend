@@ -1,0 +1,51 @@
+<div class="flex h-screen overflow-hidden">
+
+  <!-- Sidebar (unchanged) -->
+  <aside
+    class="w-64 border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900"
+  >
+    <app-sidebar></app-sidebar>
+    <app-user-profile></app-user-profile>
+  </aside>
+
+  <!-- Main + Cart wrapper -->
+  <div class="flex-1 flex overflow-hidden">
+
+    <!-- Main area -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+
+      <!-- NEW ORDER -->
+      <ng-container *ngIf="(currentView$ | async) === 'newOrder'">
+
+        <!-- load your new order page -->
+        <app-new-order></app-new-order>
+
+      </ng-container>
+
+      <!-- LIVE TRACKING -->
+      <ng-container *ngIf="(currentView$ | async) === 'liveTracking'">
+        <div class="p-8">
+          <app-live-tracking></app-live-tracking>
+        </div>
+      </ng-container>
+
+      <!-- ORDER HISTORY -->
+      <ng-container *ngIf="(currentView$ | async) === 'orderHistory'">
+        <div class="p-8">
+          <app-order-history></app-order-history>
+        </div>
+      </ng-container>
+
+      <!-- MENU MANAGEMENT -->
+      <ng-container *ngIf="(currentView$ | async) === 'menuManagement'">
+        <div class="p-8">
+          <app-menu-management></app-menu-management>
+        </div>
+      </ng-container>
+
+    </main>
+
+
+  </div>
+
+</div>
