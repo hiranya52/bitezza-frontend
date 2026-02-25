@@ -1,18 +1,28 @@
+import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule, NgIf, NgClass } from '@angular/common';
 import { order } from './../../../model/order.model';
-import { Component, inject } from '@angular/core';
 import { OrderService } from '../../service/orders/order.service';
+import { PreparingOrderCardComponent } from "../preparing-order-card/preparing-order-card.component";
 
 @Component({
   selector: 'app-order-column-header',
-  imports: [],
+  imports: [CommonModule, NgIf, PreparingOrderCardComponent],
   templateUrl: './order-column-header.component.html',
   styleUrl: './order-column-header.component.css'
 })
-export class OrderColumnHeaderComponent {
+export class OrderColumnHeaderComponent implements OnInit{
 
   private orderService = inject(OrderService);
 
   orderList: order [] = [];
+
+  ngOnInit(): void {
+
+    this.getAllOrders();
+    console.log(this.getAllOrders());
+
+
+  }
 
   getAllOrders(){
     this.orderService.getAllOrders().subscribe( res => {

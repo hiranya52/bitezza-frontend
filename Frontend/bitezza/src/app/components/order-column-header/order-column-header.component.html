@@ -28,11 +28,9 @@
     <div class="flex flex-col gap-4 custom-scrollbar overflow-y-auto max-h-[calc(100vh-320px)] pr-2">
 
 
-
-
-      <!-- @for (item of ; track $index) {} -->
-
-
+      <ng-container *ngFor="let item of orderList">
+        <app-preparing-order-card *ngIf="item.orderStatus === 'PREPARING'" [order]="item"></app-preparing-order-card>
+      </ng-container>
 
       <!-- Card 2 -->
 
