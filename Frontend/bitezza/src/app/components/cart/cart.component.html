@@ -4,7 +4,7 @@
   <div class="p-6 border-b border-gray-100 dark:border-zinc-800 flex items-center justify-between">
     <div>
       <h2 class="text-xl font-bold">Current Cart</h2>
-      <p class="text-xs text-gray-400 font-medium">Order #BIT-1000</p>
+      <p class="text-xs text-gray-400 font-medium">Order #BIT-{{ orderNumber }}</p>
     </div>
 
     <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline" (click)="clearAll()">
@@ -17,27 +17,27 @@
   <div class="p-6 pt-3">
     <div class="bg-gray-100 dark:bg-zinc-800/50 p-1.5 rounded-xl flex items-center gap-1">
       <button (click)="setServiceType('Dine In')" [ngClass]="{
-          'text-black': activeServiceType === 'Dine In',
+          'text-black': activeServiceType === 'DINE_IN',
           'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200':
-            activeServiceType !== 'Dine In',
+            activeServiceType !== 'DINE_IN',
         }" class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all">
         <span class="material-symbols-outlined text-xl">restaurant</span>
         <span class="text-[10px] font-bold uppercase mt-0.5 tracking-wider">Dine In</span>
       </button>
 
-      <button (click)="setServiceType('Takeaway')" [ngClass]="{
-          'text-black': activeServiceType === 'Takeaway',
+      <button (click)="setServiceType('TAKEAWAY')" [ngClass]="{
+          'text-black': activeServiceType === 'TAKEAWAY',
           'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200':
-            activeServiceType !== 'Takeaway',
+            activeServiceType !== 'TAKEAWAY',
         }" class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all">
         <span class="material-symbols-outlined text-xl">takeout_dining</span>
         <span class="text-[10px] font-bold uppercase mt-0.5 tracking-wider">Takeaway</span>
       </button>
 
-      <button (click)="setServiceType('Delivery')" [ngClass]="{
-          'text-black': activeServiceType === 'Delivery',
+      <button (click)="setServiceType('DELIVERY')" [ngClass]="{
+          'text-black': activeServiceType === 'DELIVERY',
           'text-gray-400 hover:text-gray-600 dark:hover:text-gray-200':
-            activeServiceType !== 'Delivery',
+            activeServiceType !== 'DELIVERY',
         }" class="flex-1 py-2.5 rounded-[10px] flex flex-col items-center justify-center transition-all">
         <span class="material-symbols-outlined text-xl">delivery_dining</span>
         <span class="text-[10px] font-bold uppercase mt-0.5 tracking-wider">Delivery</span>

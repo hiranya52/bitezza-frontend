@@ -16,13 +16,14 @@ import { OrderService } from '../../service/orders/order.service';
 export class CartComponent implements OnInit {
 
   cartProductList: cartProduct[] = [];
-
   orderProductList: OrderItem[] = [];
 
   private cart = inject(CartService);
   private order = inject(OrderService);
 
-  activeServiceType: string = 'Dine In';
+  orderNumber: number = 1000;
+
+  activeServiceType: string = 'DINE_IN';
 
   setServiceType(type: string) {
     this.activeServiceType = type;
@@ -84,11 +85,15 @@ export class CartComponent implements OnInit {
       items: this.orderProductList
     };
 
-    console.log(newOrder);
+    this.order.addOrder(newOrder).subscribe( res => {
+      console.log(res);
+      this.setNewOrderId(res.orderId);
 
+    })
+  }
 
-
-
+  setNewOrderId(id: number){
+    this.orderNumber = ++id;
   }
 
 }

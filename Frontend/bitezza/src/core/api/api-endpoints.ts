@@ -10,7 +10,8 @@ export const API_ENDPOINTS = {
   },
 
   order: {
-    add: `${BASE_URL}/order/add`
+    add: `${BASE_URL}/order/add`,
+    getLastOrderId: `${BASE_URL}/order/lastId`
   }
 
 }
