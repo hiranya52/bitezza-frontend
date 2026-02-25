@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { OrderService } from '../../service/orders/order.service';
 
 @Component({
   selector: 'app-order-column-header',
@@ -8,6 +9,6 @@ import { Component } from '@angular/core';
 })
 export class OrderColumnHeaderComponent {
 
-  
+  private orderService = inject(OrderService);
 
 }
