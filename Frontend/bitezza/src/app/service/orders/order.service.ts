@@ -20,8 +20,8 @@ export class OrderService {
     return this.http.post<order>(API_ENDPOINTS.order.add,order);
   }
 
-  getAllOrders(): Observable<order>{
-    return this.http.get<order>(API_ENDPOINTS.order.getAll);
+  getAllOrders(): Observable<order[]>{
+    return this.http.get<order[]>(API_ENDPOINTS.order.getAll);
   }
 
 }

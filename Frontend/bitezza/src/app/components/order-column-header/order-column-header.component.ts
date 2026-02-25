@@ -1,6 +1,6 @@
+import { order } from './../../../model/order.model';
 import { Component, inject } from '@angular/core';
 import { OrderService } from '../../service/orders/order.service';
-import { order } from '../../../model/order.model';
 
 @Component({
   selector: 'app-order-column-header',
@@ -13,6 +13,12 @@ export class OrderColumnHeaderComponent {
   private orderService = inject(OrderService);
 
   orderList: order [] = [];
+
+  getAllOrders(){
+    this.orderService.getAllOrders().subscribe( res => {
+      this.orderList = res;
+    })
+  }
 
 
 }
