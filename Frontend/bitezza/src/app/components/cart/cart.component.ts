@@ -5,6 +5,7 @@ import { cartProduct } from './../../../model/CartProduct.model';
 import { Component, inject, OnInit } from '@angular/core';
 import { CartItemComponent } from "../cart-item/cart-item.component";
 import { CommonModule } from '@angular/common';
+import { OrderService } from '../../service/orders/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit {
   orderProductList: OrderItem[] = [];
 
   private cart = inject(CartService);
+  private order = inject(OrderService);
 
   activeServiceType: string = 'Dine In';
 
@@ -72,7 +74,19 @@ export class CartComponent implements OnInit {
 
   addOrder() {
 
-    
+    this.addorderProductList();
+
+    const newOrder: order = {
+      orderId: 1000,
+      orderStatus: 'PREPARING',
+      serviceType: this.activeServiceType,
+      totalValue: this.getTotalPayable(),
+      items: this.orderProductList
+    };
+
+    console.log(newOrder);
+
+
 
 
   }
