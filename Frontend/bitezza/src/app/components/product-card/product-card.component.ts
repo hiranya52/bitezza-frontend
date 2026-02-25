@@ -19,9 +19,11 @@ export class ProductCardComponent {
   addToCart( productName: string ){
 
     this.ProductService.getProduct(productName).subscribe((response:any) => {
+      console.log(response);
 
       const product: cartProduct = {
 
+        productId: response.id,
         name: response.name,
         imageURL: response.imageUrl,
         price: response.price,

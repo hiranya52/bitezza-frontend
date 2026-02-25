@@ -1,5 +1,8 @@
+import { order } from './../../../model/order.model';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { API_ENDPOINTS } from '../../../core/api/api-endpoints';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +11,8 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  addOrder(  ){}
+  addOrder( order: order ): Observable<order>{
+    return this.http.post<order>(API_ENDPOINTS.order.add,order);
+  }
 
 }

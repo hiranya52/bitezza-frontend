@@ -1,3 +1,5 @@
+import { OrderItem } from './../../../model/order-item.model';
+import { order } from './../../../model/order.model';
 import { CartService } from './../../service/carts/cart.service';
 import { cartProduct } from './../../../model/CartProduct.model';
 import { Component, inject, OnInit } from '@angular/core';
@@ -10,9 +12,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
-export class CartComponent implements OnInit{
+export class CartComponent implements OnInit {
 
   cartProductList: cartProduct[] = [];
+
+  orderProductList: OrderItem[] = [];
 
   private cart = inject(CartService);
 
@@ -29,30 +33,48 @@ export class CartComponent implements OnInit{
     console.log(this.cartProductList);
   }
 
-  clearAll(){
-    this.cartProductList .length = 0;
+  clearAll() {
+    this.cartProductList.length = 0;
   }
 
-  getSubTotal(){
-    let total=0;
+  getSubTotal() {
+    let total = 0;
 
-    for(let i = 0; i < this.cartProductList.length; i++){
-      total += this.cartProductList[i].price*this.cartProductList[i].qty;
+    for (let i = 0; i < this.cartProductList.length; i++) {
+      total += this.cartProductList[i].price * this.cartProductList[i].qty;
     }
     return total;
   }
 
-  getServiceFee(){
+  getServiceFee() {
     let total = this.getSubTotal();
-    return total/100*5;
+    return total / 100 * 5;
   }
 
-  getTotalPayable(){
-    return this.getSubTotal()+this.getServiceFee();
+  getTotalPayable() {
+    return this.getSubTotal() + this.getServiceFee();
   }
 
-  addOrder(){
+  addorderProductList() {
+
+    this.cartProductList.forEach(element => {
+
+        const orderItem: OrderItem = {
+          productId: element.productId,
+          quantity: element.qty,
+          price: element.price
+        }
+
+        this.orderProductList.push(orderItem);
+
+      });
+  }
+
+  addOrder() {
+
     
+
+
   }
 
 }
