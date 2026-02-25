@@ -5,15 +5,15 @@
       <!-- <div class="flex items-center gap-2">
         <span class="material-symbols-outlined text-red-500 text-sm">priority_high</span>
       </div> -->
-      <h4 class="font-bold text-lg text-red-600">Order #{{}}</h4>
+      <h4 class="font-bold text-lg text-red-600">Order #{{order.orderId}}</h4>
     </div>
     <div class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-[10px] font-bold uppercase">
-      Dine-in
+      {{order.serviceType}}
     </div>
   </div>
   <div class="mb-4">
     <p class="text-sm font-semibold text-[#181411] dark:text-white">
-      1x Double Wagyu (Rare), 1x Truffle Fries
+      {{order.items}}
     </p>
   </div>
   <div class="flex items-center justify-between border-t border-red-50 border-[#f5f2f0] dark:border-[#3a2d24] pt-4">
