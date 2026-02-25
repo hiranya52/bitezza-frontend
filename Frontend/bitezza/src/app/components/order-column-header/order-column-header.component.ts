@@ -3,10 +3,11 @@ import { CommonModule, NgIf, NgClass } from '@angular/common';
 import { order } from './../../../model/order.model';
 import { OrderService } from '../../service/orders/order.service';
 import { PreparingOrderCardComponent } from "../preparing-order-card/preparing-order-card.component";
+import { CookingOrderCardComponent } from "../cooking-order-card/cooking-order-card.component";
 
 @Component({
   selector: 'app-order-column-header',
-  imports: [CommonModule, NgIf, PreparingOrderCardComponent],
+  imports: [CommonModule, NgIf, PreparingOrderCardComponent, CookingOrderCardComponent],
   templateUrl: './order-column-header.component.html',
   styleUrl: './order-column-header.component.css'
 })
