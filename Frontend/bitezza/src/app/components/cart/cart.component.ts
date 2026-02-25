@@ -93,10 +93,13 @@ export class CartComponent implements OnInit {
 
     this.order.addOrder(newOrder).subscribe( res => {
       console.log(res);
-      
+      this.setNewOrderId(res.orderId);
 
     })
   }
 
+  setNewOrderId(id: number){
+    this.orderNumber = ++id;
+  }
 
 }
