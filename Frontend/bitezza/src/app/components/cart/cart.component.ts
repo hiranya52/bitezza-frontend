@@ -33,7 +33,13 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartProductList = this.cart.getCartItems();
-    console.log(this.cartProductList);
+
+
+    this.order.getLastOrderId().subscribe( res => {
+      this.orderNumber = ++res;
+    })
+
+
   }
 
   clearAll() {
@@ -87,13 +93,10 @@ export class CartComponent implements OnInit {
 
     this.order.addOrder(newOrder).subscribe( res => {
       console.log(res);
-      this.setNewOrderId(res.orderId);
+      
 
     })
   }
 
-  setNewOrderId(id: number){
-    this.orderNumber = ++id;
-  }
 
 }

@@ -11,6 +11,11 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
+  getLastOrderId(): Observable<number>{
+    return this.http.get<number>(API_ENDPOINTS.order.getLastOrderId);
+  }
+
+
   addOrder( order: order ): Observable<order>{
     return this.http.post<order>(API_ENDPOINTS.order.add,order);
   }
