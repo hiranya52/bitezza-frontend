@@ -32,7 +32,6 @@ export class CartComponent implements OnInit {
 
   setServiceType(type: string) {
     this.activeServiceType = type;
-    console.log(type);
 
   }
 
@@ -94,6 +93,9 @@ export class CartComponent implements OnInit {
       if(res != null){
         this.toast.show('Order Confirmed!');
         this.setNewOrderId();
+        // Clear Fields
+        this.cartProductList.length = 0;
+        this.activeServiceType = 'DINE_IN';
       }
     })
   }
