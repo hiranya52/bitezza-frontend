@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { OrderService } from '../../service/orders/order.service';
+import { order } from '../../../model/order.model';
 
 @Component({
   selector: 'app-order-column-header',
@@ -10,5 +11,8 @@ import { OrderService } from '../../service/orders/order.service';
 export class OrderColumnHeaderComponent {
 
   private orderService = inject(OrderService);
+
+  orderList: order [] = [];
+
 
 }
