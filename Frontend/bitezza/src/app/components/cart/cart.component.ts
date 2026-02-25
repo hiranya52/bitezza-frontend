@@ -6,6 +6,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CartItemComponent } from "../cart-item/cart-item.component";
 import { CommonModule } from '@angular/common';
 import { OrderService } from '../../service/orders/order.service';
+import { NotificationService } from '../../service/notification/notification.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,6 +15,10 @@ import { OrderService } from '../../service/orders/order.service';
   styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
+
+  constructor(
+    private toast: NotificationService
+  ){}
 
   cartProductList: cartProduct[] = [];
   orderProductList: OrderItem[] = [];
@@ -86,9 +91,10 @@ export class CartComponent implements OnInit {
     };
 
     this.order.addOrder(newOrder).subscribe( res => {
-      console.log(res);
-      this.setNewOrderId();
-
+      if(res != null){
+        this.toast.show('Order Confirmed!');
+        this.setNewOrderId();
+      }
     })
   }
 
