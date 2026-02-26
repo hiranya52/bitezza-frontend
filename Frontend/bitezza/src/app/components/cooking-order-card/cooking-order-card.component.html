@@ -13,7 +13,9 @@
   </div>
   <div class="mb-4">
     <p class="text-sm font-semibold text-[#181411] dark:text-white">
-      {{order.items}}
+      <ng-container *ngFor="let item of order.items; let i = index">
+        {{item.productName}}<span *ngIf="i < order.items.length - 1">,</span>
+      </ng-container>
     </p>
   </div>
   <div class="flex items-center justify-between border-t border-red-50 border-[#f5f2f0] dark:border-[#3a2d24] pt-4">
