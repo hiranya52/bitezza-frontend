@@ -1,6 +1,7 @@
 import { order } from './../../../model/order.model';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
+import { OrderService } from '../../service/orders/order.service';
 
 @Component({
   selector: 'app-ready-order-card',
@@ -11,5 +12,15 @@ import { CommonModule, NgIf, NgFor } from '@angular/common';
 export class ReadyOrderCardComponent {
 
   @Input() order!: order;
+
+  private orderService = inject(OrderService);
+
+  completeOrder(orderId: number){
+
+    this.orderService.updateOrderStatus(orderId).subscribe( res=> {
+      
+    })
+
+  }
 
 }
