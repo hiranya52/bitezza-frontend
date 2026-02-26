@@ -23,7 +23,6 @@ export class OrderColumnHeaderComponent implements OnInit{
     this.getAllOrders();
     console.log(this.getAllOrders());
 
-
   }
 
   getAllOrders(){
