@@ -68,14 +68,14 @@ export class CartComponent implements OnInit {
 
         const orderItem: OrderItem = {
           productId: element.productId,
+          productName: element.name,
           quantity: element.qty,
           price: element.price
         }
-        console.log(orderItem);
-
         this.orderProductList.push(orderItem);
 
       });
+
   }
 
   addOrder() {
