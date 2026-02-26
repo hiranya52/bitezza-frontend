@@ -71,6 +71,7 @@ export class CartComponent implements OnInit {
           quantity: element.qty,
           price: element.price
         }
+        console.log(orderItem);
 
         this.orderProductList.push(orderItem);
 
