@@ -1,6 +1,5 @@
 <div class="p-6 flex items-center gap-3">
   <div class="bg-primary p-2 rounded-lg text-white">
- <!-- <aside class="w-64 flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 z-10"> -->
     <span class="material-symbols-outlined text-2xl">lunch_dining</span>
   </div>
   <h2 class="text-xl font-bold tracking-tight">Bitezza</h2>
@@ -11,28 +10,48 @@
     Menu Categories
   </p>
 
+  <!-- New Order -->
   <a (click)="setView('newOrder')"
-  class="flex items-center gap-3 px-4 py-3 rounded-full active-category shadow-lg shadow-primary/20 transition-all">
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'newOrder',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'newOrder'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
     <span class="material-symbols-outlined">add_shopping_cart</span>
-     <span class="font-semibold hidden lg:block">New Order</span>
+    <span class="font-semibold hidden lg:block">New Order</span>
   </a>
 
+  <!-- Live Tracking -->
   <a (click)="setView('liveTracking')"
-  class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all">
-    <span class="material-symbols-outlined group-hover:text-primary transition-colors">monitoring</span>
-     <span class="font-medium hidden lg:block group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Live Tracking</span>
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'liveTracking',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'liveTracking'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">monitoring</span>
+    <span class="font-medium hidden lg:block">Live Tracking</span>
   </a>
 
+  <!-- Order History -->
   <a (click)="setView('orderHistory')"
-  class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all">
-    <span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
-    <span class="font-medium hidden lg:block group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Order History</span>
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'orderHistory',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'orderHistory'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">history</span>
+    <span class="font-medium hidden lg:block">Order History</span>
   </a>
-  
+
+  <!-- Menu Management -->
   <a (click)="setView('menuManagement')"
-  class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all">
-    <span class="material-symbols-outlined group-hover:text-primary transition-colors">restaurant_menu</span>
-    <span class="font-medium hidden lg:block group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Menu Management</span>
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'menuManagement',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'menuManagement'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">restaurant_menu</span>
+    <span class="font-medium hidden lg:block">Menu Management</span>
   </a>
 
 </nav>
