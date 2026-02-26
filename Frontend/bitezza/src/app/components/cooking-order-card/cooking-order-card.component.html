@@ -19,7 +19,7 @@
       <span class="material-symbols-outlined text-[18px]">timer</span>
       <span class="font-extrabold text-sm">01:15</span>
     </div>
-    <button
+    <button (click)="markAsReady(order.orderId)"
       class="bg-primary text-white px-4 py-2 rounded-full text-xs font-bold shadow-md shadow-primary/30 transition-all active:scale-95 hover:bg-primary/10 hover:text-primary">
       Mark as Ready
     </button>
