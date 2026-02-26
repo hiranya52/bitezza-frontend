@@ -16,11 +16,8 @@ export class ReadyOrderCardComponent {
   private orderService = inject(OrderService);
 
   completeOrder(orderId: number){
-
     this.orderService.updateOrderStatus(orderId).subscribe( res=> {
-      
     })
-
   }
 
 }
