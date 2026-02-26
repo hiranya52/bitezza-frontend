@@ -12,4 +12,6 @@ export class PreparingOrderCardComponent {
 
   @Input() order!: order;
 
+  
+
 }
