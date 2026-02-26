@@ -24,7 +24,7 @@ export class OrderService {
     return this.http.get<order[]>(API_ENDPOINTS.order.getAll);
   }
 
-  updateOrderStatus(orderId: string){
+  updateOrderStatus(orderId: number){
     return this.http.put(API_ENDPOINTS.order.updateOrderStatus + orderId, {});
   }
 
