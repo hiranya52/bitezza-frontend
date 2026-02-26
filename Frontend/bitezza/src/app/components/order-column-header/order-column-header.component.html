@@ -54,7 +54,9 @@
       <span class="bg-green-500/10 text-green-500 px-3 py-1 rounded-full text-xs font-bold">3 Orders</span>
     </div>
     <div class="flex flex-col gap-4 custom-scrollbar overflow-y-auto max-h-[calc(100vh-320px)] pr-2">
-
+      <ng-container *ngFor="let item of orderList">
+        <app-ready-order-card *ngIf="item.orderStatus == 'READY' " [order]="item"></app-ready-order-card>
+      </ng-container>
     </div>
   </div>
 
