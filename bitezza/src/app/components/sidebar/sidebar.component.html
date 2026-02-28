@@ -1,0 +1,38 @@
+<div class="p-6 flex items-center gap-3">
+  <div class="bg-primary p-2 rounded-lg text-white">
+ <!-- <aside class="w-64 flex flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 z-10"> -->
+    <span class="material-symbols-outlined text-2xl">lunch_dining</span>
+  </div>
+  <h2 class="text-xl font-bold tracking-tight">Bitezza</h2>
+</div>
+
+<nav class="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
+  <p class="px-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 mb-4 tracking-widest">
+    Menu Categories
+  </p>
+
+  <a (click)="setView('newOrder')"
+  class="flex items-center gap-3 px-4 py-3 rounded-full active-category shadow-lg shadow-primary/20 transition-all">
+    <span class="material-symbols-outlined">add_shopping_cart</span>
+     <span class="font-semibold hidden lg:block">New Order</span>
+  </a>
+
+  <a (click)="setView('liveTracking')"
+  class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all">
+    <span class="material-symbols-outlined group-hover:text-primary transition-colors">monitoring</span>
+     <span class="font-medium hidden lg:block group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Live Tracking</span>
+  </a>
+
+  <a (click)="setView('orderHistory')"
+  class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all">
+    <span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+    <span class="font-medium hidden lg:block group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Order History</span>
+  </a>
+  
+  <a (click)="setView('menuManagement')"
+  class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition-all">
+    <span class="material-symbols-outlined group-hover:text-primary transition-colors">restaurant_menu</span>
+    <span class="font-medium hidden lg:block group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Menu Management</span>
+  </a>
+
+</nav>

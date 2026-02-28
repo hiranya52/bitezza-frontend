@@ -1,0 +1,57 @@
+<div class="p-6 flex items-center gap-3">
+  <div class="bg-primary p-2 rounded-lg text-white">
+    <span class="material-symbols-outlined text-2xl">lunch_dining</span>
+  </div>
+  <h2 class="text-xl font-bold tracking-tight">Bitezza</h2>
+</div>
+
+<nav class="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
+  <p class="px-4 text-xs font-semibold uppercase text-gray-400 dark:text-gray-500 mb-4 tracking-widest">
+    Menu Categories
+  </p>
+
+  <!-- New Order -->
+  <a (click)="setView('newOrder')"
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'newOrder',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'newOrder'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">add_shopping_cart</span>
+    <span class="font-semibold hidden lg:block">New Order</span>
+  </a>
+
+  <!-- Live Tracking -->
+  <a (click)="setView('liveTracking')"
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'liveTracking',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'liveTracking'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">monitoring</span>
+    <span class="font-medium hidden lg:block">Live Tracking</span>
+  </a>
+
+  <!-- Order History -->
+  <a (click)="setView('orderHistory')"
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'orderHistory',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'orderHistory'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">history</span>
+    <span class="font-medium hidden lg:block">Order History</span>
+  </a>
+
+  <!-- Menu Management -->
+  <a (click)="setView('menuManagement')"
+     [ngClass]="{
+       'bg-primary text-white shadow-lg shadow-primary/20': currentView === 'menuManagement',
+       'hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-800 dark:text-white': currentView !== 'menuManagement'
+     }"
+     class="flex items-center gap-3 px-4 py-3 rounded-full transition-all">
+    <span class="material-symbols-outlined">restaurant_menu</span>
+    <span class="font-medium hidden lg:block">Menu Management</span>
+  </a>
+
+</nav>

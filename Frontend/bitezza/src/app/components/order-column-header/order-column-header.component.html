@@ -1,0 +1,64 @@
+<!-- Live Kanban View -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full min-h-[70vh]">
+
+  <!-- Column: Preparing -->
+  <div class="flex flex-col gap-4">
+    <div
+      class="flex items-center justify-between bg-white/50 dark:bg-[#2d1f15]/50 backdrop-blur-md p-4 rounded-xl border-l-4 border-[#8a7260] sticky top-0 z-10">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[#8a7260]">assignment</span>
+        <h3 class="font-bold text-lg uppercase tracking-wider text-[#181411] dark:text-white">
+          Preparing
+        </h3>
+      </div>
+      <span class="bg-[#8a7260]/10 text-[#8a7260] px-3 py-1 rounded-full text-xs font-bold">4 Orders</span>
+    </div>
+    <div class="flex flex-col gap-4 custom-scrollbar overflow-y-auto max-h-[calc(100vh-320px)] pr-2">
+      <ng-container *ngFor="let item of orderList">
+        <app-preparing-order-card *ngIf="item.orderStatus === 'PREPARING'" [order]="item"></app-preparing-order-card>
+      </ng-container>
+    </div>
+  </div>
+
+
+  <!-- Column: Cooking -->
+  <div class="flex flex-col gap-4">
+    <div
+      class="flex items-center justify-between bg-white/50 dark:bg-[#2d1f15]/50 backdrop-blur-md p-4 rounded-xl border-l-4 border-primary sticky top-0 z-10">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary">skillet</span>
+        <h3 class="font-bold text-lg uppercase tracking-wider text-[#181411] dark:text-white">
+          Cooking
+        </h3>
+      </div>
+      <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold">5 Orders</span>
+    </div>
+    <div class="flex flex-col gap-4 custom-scrollbar overflow-y-auto max-h-[calc(100vh-320px)] pr-2">
+      <ng-container *ngFor="let item of orderList">
+        <app-cooking-order-card *ngIf="item.orderStatus === 'COOKING'" [order]="item"></app-cooking-order-card>
+      </ng-container>
+    </div>
+  </div>
+
+  
+  <!-- Column: Ready -->
+  <div class="flex flex-col gap-4">
+    <div
+      class="flex items-center justify-between bg-white/50 dark:bg-[#2d1f15]/50 backdrop-blur-md p-4 rounded-xl border-l-4 border-green-500 sticky top-0 z-10">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-green-500">check_circle</span>
+        <h3 class="font-bold text-lg uppercase tracking-wider text-[#181411] dark:text-white">
+          Ready
+        </h3>
+      </div>
+      <span class="bg-green-500/10 text-green-500 px-3 py-1 rounded-full text-xs font-bold">3 Orders</span>
+    </div>
+    <div class="flex flex-col gap-4 custom-scrollbar overflow-y-auto max-h-[calc(100vh-320px)] pr-2">
+      <ng-container *ngFor="let item of orderList">
+        <app-ready-order-card *ngIf="item.orderStatus == 'READY' " [order]="item"></app-ready-order-card>
+      </ng-container>
+    </div>
+  </div>
+
+
+</div>

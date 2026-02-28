@@ -1,0 +1,26 @@
+<div
+  class="bg-white dark:bg-[#2d1f16] rounded-xl shadow-sm border border-[#e6dfdb] dark:border-[#3a2c22] overflow-hidden">
+  <!-- Scrollable container -->
+  <div class="overflow-x-auto">
+    <div class="max-h-96 overflow-y-auto">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-[#e6dfdb] dark:border-[#3a2c22] bg-[#fcfaf9] dark:bg-[#34241a]">
+            <th class="w-1/6 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#8a7260]">Order ID</th>
+            <th class="w-1/6 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#8a7260]">Timestamp</th>
+            <th class="w-2/6 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#8a7260]">Order Type</th>
+            <th class="w-1/6 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#8a7260]">Amount</th>
+            <th class="w-1/6 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#8a7260]">Status</th>
+            <th class="w-1/6 px-3 py-2 text-xs font-bold uppercase tracking-wider text-[#8a7260] text-right">Actions
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <app-finished-order-card></app-finished-order-card>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

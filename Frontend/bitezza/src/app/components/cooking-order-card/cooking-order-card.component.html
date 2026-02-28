@@ -1,0 +1,27 @@
+<div class="bg-white dark:bg-[#2d1f15] p-5 rounded-xl shadow-md border-2 border-red-300 transition-all group">
+  <div class="flex justify-between items-start mb-3">
+    <div class="flex flex-col">
+      <h4 class="font-bold text-lg text-red-500">Order #{{order.orderId}}</h4>
+    </div>
+    <div class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-[10px] font-bold uppercase">
+      {{order.serviceType}}
+    </div>
+  </div>
+  <div class="mb-4">
+    <p class="text-sm font-semibold text-[#181411] dark:text-white">
+      <ng-container *ngFor="let item of order.items; let i = index">
+        {{item.productName}}<span *ngIf="i < order.items.length - 1">,</span>
+      </ng-container>
+    </p>
+  </div>
+  <div class="flex items-center justify-between border-t border-red-50 border-[#f5f2f0] dark:border-[#3a2d24] pt-4">
+    <div class="flex items-center gap-2 text-red-500">
+      <span class="material-symbols-outlined text-[18px]">timer</span>
+      <span class="font-extrabold text-sm">01:15</span>
+    </div>
+    <button (click)="markAsReady(order.orderId)"
+      class="bg-primary text-white px-4 py-2 rounded-full text-xs font-bold shadow-md shadow-primary/30 transition-all active:scale-95 hover:bg-primary/10 hover:text-primary">
+      Mark as Ready
+    </button>
+  </div>
+</div>

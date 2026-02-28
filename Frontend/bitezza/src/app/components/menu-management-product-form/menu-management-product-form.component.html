@@ -1,0 +1,78 @@
+<div class="space-y-4">
+
+  <!-- Product name -->
+  <div class="space-y-2">
+    <label class="text-sm font-bold block">Product Name</label>
+    <input
+      class="w-full bg-background-light dark:bg-[#3d2b1f] border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50"
+      placeholder="e.g. Spicy Zinger"
+      type="text"
+    />
+  </div>
+
+  <!-- Category & price -->
+  <div class="grid grid-cols-2 gap-4">
+
+    <div class="space-y-2">
+      <label class="text-sm font-bold block">Category</label>
+      <select
+        class="w-full bg-background-light dark:bg-[#3d2b1f] border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50 appearance-none"
+      >
+        <option>Burgers</option>
+        <option>Sides</option>
+        <option>Drinks</option>
+        <option>Desserts</option>
+      </select>
+    </div>
+
+    <div class="space-y-2">
+      <label class="text-sm font-bold block">Price ($)</label>
+      <input
+        class="w-full bg-background-light dark:bg-[#3d2b1f] border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50"
+        placeholder="0.00"
+        step="0.01"
+        type="number"
+      />
+    </div>
+
+  </div>
+
+  <!-- Description -->
+  <div class="space-y-2">
+    <label class="text-sm font-bold block">Description</label>
+    <textarea
+      class="w-full bg-background-light dark:bg-[#3d2b1f] border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50 resize-none"
+      placeholder="Briefly describe the ingredients and taste..."
+      rows="4"
+    ></textarea>
+  </div>
+
+  <!-- Availability -->
+  <div class="space-y-2">
+    <label class="text-sm font-bold block">Availability</label>
+
+    <div class="flex items-center gap-6">
+
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input
+          checked
+          class="text-primary focus:ring-primary size-5 border-none bg-background-light"
+          name="stock"
+          type="radio"
+        />
+        <span class="text-sm font-medium">In Stock</span>
+      </label>
+
+      <label class="flex items-center gap-2 cursor-pointer">
+        <input
+          class="text-primary focus:ring-primary size-5 border-none bg-background-light"
+          name="stock"
+          type="radio"
+        />
+        <span class="text-sm font-medium">Out of Stock</span>
+      </label>
+
+    </div>
+  </div>
+
+</div>
