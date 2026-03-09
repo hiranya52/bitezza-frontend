@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { order } from './../../../model/order.model';
+import { Component, Input } from '@angular/core';
 import { FinishedOrderCardComponent } from "../finished-order-card/finished-order-card.component";
 
 @Component({
@@ -8,5 +9,7 @@ import { FinishedOrderCardComponent } from "../finished-order-card/finished-orde
   styleUrl: './order-history-orders-table.component.css'
 })
 export class OrderHistoryOrdersTableComponent {
+
+  @Input() order!: order;
 
 }

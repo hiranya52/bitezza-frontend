@@ -15,6 +15,10 @@ export const API_ENDPOINTS = {
     getAll: `${BASE_URL}/order/getAll`,
     updateOrderStatus: `${BASE_URL}/order/nextStatus/`
 
+  },
+
+  user: {
+    getUser: `${BASE_URL}/user/getUser/`
   }
 
 }
