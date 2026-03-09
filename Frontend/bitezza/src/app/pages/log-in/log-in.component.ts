@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
+import { UserService } from '../../service/users/user.service';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 export class LogInComponent {
 
   userForm: FormGroup
+  private userService = inject(UserService);
 
   constructor(
     formBuider: FormBuilder
@@ -27,7 +29,16 @@ export class LogInComponent {
 
   onSubmit(){
 
-    
+    const user = this.userForm.value;
+
+    this.userService.getUser(user.username).subscribe( res => {
+      if(res != null){
+        if( res.password == user.password ){
+          
+        }
+      }
+    })
+
 
   }
 
