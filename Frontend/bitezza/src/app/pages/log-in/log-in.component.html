@@ -32,19 +32,19 @@
         </div>
 
         <!-- Form -->
-        <form class="space-y-4">
+        <form class="space-y-4" [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
           <!-- Username -->
           <div>
             <label class="text-xs font-bold text-gray-500 uppercase">Username</label>
-            <input type="text" placeholder="Employee ID or name"
+            <input type="text" placeholder="Employee ID or name" formControlName="username"
               class="w-full h-11 mt-1 px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent outline-none focus:border-primary" />
           </div>
 
           <!-- Password -->
           <div>
             <label class="text-xs font-bold text-gray-500 uppercase">Password</label>
-            <input type="password" placeholder="••••••••"
+            <input type="password" placeholder="••••••••" formControlName="password"
               class="w-full h-11 mt-1 px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent outline-none focus:border-primary" />
           </div>
 
