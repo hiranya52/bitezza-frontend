@@ -1,48 +1,30 @@
-  <div
-    class="bg-white dark:bg-[#2d1f16] p-4 rounded-xl shadow-sm border border-[#e6dfdb] dark:border-[#3a2c22] mb-6">
-
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-
-      <div class="flex bg-background-light dark:bg-[#3a2c22] p-1.5 rounded-full w-fit">
-
-        <button
-          class="px-8 py-2.5 rounded-full text-sm font-bold bg-primary text-white shadow-md">
-          Finished Orders
-        </button>
-
-        <button
-          class="px-8 py-2.5 rounded-full text-sm font-bold text-[#8a7260] dark:text-[#c4b1a2] hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-          Cancelled Orders
-        </button>
-
+<div
+  class="bg-white dark:bg-[#2d1f16] p-4 rounded-xl shadow-sm border border-[#e6dfdb] dark:border-[#3a2c22] mb-6 mb-4">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+    <!-- Tabs -->
+    <div class="flex bg-background-light dark:bg-[#3a2c22] p-1.5 rounded-full w-fit">
+      <button class="px-8 py-2.5 rounded-full text-sm font-bold bg-primary text-white shadow-md">
+        Finished Orders
+      </button>
+      <button
+        class="px-8 py-2.5 rounded-full text-sm font-bold text-[#8a7260] dark:text-[#c4b1a2] hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+        Cancelled Orders
+      </button>
+    </div>
+    <!-- Search and Calendar -->
+    <div class="flex flex-1 flex-wrap gap-4 items-center justify-end">
+      <div class="relative flex-1 max-w-md">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#8a7260]">search</span>
+        <input
+          class="w-full h-12 pl-12 pr-4 bg-background-light dark:bg-[#3a2c22] border-none rounded-full focus:ring-2 focus:ring-primary/50 text-sm bg-white dark:bg-transparent border border-[#e6dfdb] dark:border-[#3a2c22]"
+          placeholder="Search by Order ID, customer, or table..." type="text">
       </div>
-
-      <div class="flex flex-1 flex-wrap gap-4 items-center justify-end">
-
-        <div class="relative flex-1 max-w-md">
-          <span
-            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#8a7260]">
-            search
-          </span>
-          <input
-            class="w-full h-12 pl-12 pr-4 bg-background-light dark:bg-[#3a2c22] border-none rounded-full focus:ring-2 focus:ring-primary/50 text-sm"
-            placeholder="Search by Order ID, customer, or table..."
-            type="text" />
-        </div>
-
-        <div
-          class="flex items-center gap-2 bg-background-light dark:bg-[#3a2c22] px-4 py-3 rounded-full">
-          <span class="material-symbols-outlined text-[#8a7260]">calendar_today</span>
-          <span class="text-sm font-medium">
-            Oct 24, 2023 - Oct 30, 2023
-          </span>
-          <span
-            class="material-symbols-outlined text-[#8a7260] cursor-pointer">
-            expand_more
-          </span>
-        </div>
-
+      <div
+        class="flex items-center gap-2 bg-background-light dark:bg-[#3a2c22] px-4 py-3 rounded-full bg-white dark:bg-transparent border border-[#e6dfdb] dark:border-[#3a2c22] py-2">
+        <span class="material-symbols-outlined text-[#8a7260]">calendar_today</span>
+        <span class="text-sm font-medium">Oct 24, 2023 - Oct 30, 2023</span>
+        <span class="material-symbols-outlined text-[#8a7260] cursor-pointer">expand_more</span>
       </div>
-
     </div>
   </div>
+</div>

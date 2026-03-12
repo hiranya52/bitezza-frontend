@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { MenuManagementImageUploadComponent } from "../menu-management-image-upload/menu-management-image-upload.component";
-import { MenuManagementProductFormComponent } from "../menu-management-product-form/menu-management-product-form.component";
-import { MenuManagementPanelFooterComponent } from "../menu-management-panel-footer/menu-management-panel-footer.component";
 
 interface SidebarLink {
   icon: string;
@@ -13,7 +10,7 @@ interface SidebarLink {
 @Component({
   selector: 'app-menu-management',
   standalone: true,
-  imports: [MenuManagementImageUploadComponent, MenuManagementProductFormComponent, MenuManagementPanelFooterComponent],
+  imports: [],
   templateUrl: './menu-management.component.html',
   styleUrl: './menu-management.component.css'
 })
